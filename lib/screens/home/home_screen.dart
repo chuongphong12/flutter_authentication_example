@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttter_authentication/blocs/auth/auth_bloc.dart';
+import 'package:fluttter_authentication/screens/home/notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,8 +21,24 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: const Center(
-        child: Text('Home Screen'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Home Screen'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NotificationScreen(),
+                  ),
+                );
+              },
+              child: const Text('Notification'),
+            ),
+          ],
+        ),
       ),
     );
   }
