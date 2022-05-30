@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +38,16 @@ class HomeScreen extends StatelessWidget {
               },
               child: const Text('Notification'),
             ),
+            AnimatedTextKit(
+              animatedTexts: [
+                ScaleAnimatedText(
+                  'Then Scale',
+                  textStyle:
+                      const TextStyle(fontSize: 70.0, fontFamily: 'Canterbury'),
+                ),
+              ],
+              isRepeatingAnimation: true,
+            )
           ],
         ),
       ),
